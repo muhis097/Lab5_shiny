@@ -1,4 +1,8 @@
 devtools::install_github("muhis097/Lab5")
+library(httr)
+library(shiny)
+library(readxl)
+library(ggplot2)
 
 
 plotfunction_ind=function(){
