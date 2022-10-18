@@ -4,7 +4,7 @@ library(shiny)
 library(readxl)
 library(ggplot2)
 
-
+require(Lab5)
 plotfunction_ind=function(){
   # library(httr)
   # library(shiny)
