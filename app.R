@@ -25,9 +25,18 @@ plotfunction_ind=function(){
 plotfunction_ind()
 
   
-ui <-  fluidPage(checkboxGroupInput(inputId="factors" , label="Choose economic factor variable", choices = NULL,
-                                     inline = FALSE, width = NULL, choiceNames = List_factors[[2]],
-                                     choiceValues = List_factors[[1]]),
+ui <-  fluidPage(selectInput(inputId="factors" , label="Choose economic factor variable", choices = c(
+  "Net lending/borrowing as a share of taxes and general government grants, municipality, (%) - Municipality" = "N03101",
+  "Sales of fixed assets as a share of taxes and general government grants, municipality, (%) - Municipality"="N03006",
+  "Net cost as a share of tax & general government grants, municipality, (%) - Municipality" = "N03100",
+  "Pension contributions and payroll taxes not shown in balance sheet municipality, SEK/inhab - Municipality"= "N03048",
+  "Profit before extraordinary items (municipality), as a share of tax & general government grants - Municipality"= "N03001",
+  "Working capital municipality, kr/inv - Municipality"= "N03003",
+  "Self-financing rate of municipal operations, (%) - Municipality"= "N03016",
+  "Net cost of operations as a share of tax revenue and general government contributions, (%) - Municipality"="N03079"
+  
+  
+  )),
                   checkboxGroupInput(inputId="Municipalities", label="Choose city variable", choices = NULL,
                                      inline = FALSE, width = NULL, choiceNames = List_kommun$Kommun[c(29,122,236,253,27,152,130,252,200,33,262,126)-1],
                                      choiceValues = List_kommun$Kod[c(29,122,236,253,27,152,130,252,200,33,262,126)-1]),
